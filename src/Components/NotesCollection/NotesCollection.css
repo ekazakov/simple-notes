@@ -1,0 +1,18 @@
+.NotesCollection {
+    background-color: #ffffff;
+    height: 100%;
+    overflow: scroll;
+}
+
+.NotesCollection__Container {
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid #fff;
+}
+
+.NotesCollection__EmptyMessage {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 24px;
+    color: #afafaf;
+}

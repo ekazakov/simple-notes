@@ -1,0 +1,40 @@
+.NewNoteForm {
+    padding: 10px;
+    padding-top: 40px;
+    border-top: 1px solid #aaa;
+}
+
+.NewNoteForm__Form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.NewNoteForm__InputContainer {
+    display: flex;
+}
+
+.NewNoteForm__Input {
+    flex-grow: 1;
+    height: 40px;
+    font-size: 16px;
+    padding: 10px;
+    margin: 0;
+    border: 1px solid #1585c0;
+}
+
+.NewNoteForm__Button {
+    flex: 0 0 100px;
+    padding: 0;
+    margin: 0;
+    background: #1585c0;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.NewNoteForm__Error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}

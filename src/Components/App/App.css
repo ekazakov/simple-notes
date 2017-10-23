@@ -1,0 +1,30 @@
+.AppLayout {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+}
+
+.AppLayout__Header {
+    height: 80px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.AppLayout__NotesContainer {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    bottom: 160px;
+    /*overflow: scroll;*/
+}
+
+.AppLayout__NewNoteContainer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 160px;
+}

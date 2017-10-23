@@ -1,0 +1,105 @@
+input AddNoteInput {
+  text: String!
+  timeStamp: String!
+  clientMutationId: String
+}
+
+type AddNotePayload {
+  noteEdge: NoteEdge
+  viewer: User
+  clientMutationId: String
+}
+
+input DeleteNoteInput {
+  id: ID!
+  clientMutationId: String
+}
+
+type DeleteNotePayload {
+  deletedNoteId: ID
+  viewer: User
+  clientMutationId: String
+}
+
+type Mutation {
+  addNote(input: AddNoteInput!): AddNotePayload
+  deleteNote(input: DeleteNoteInput!): DeleteNotePayload
+  updateNote(input: UpdateNoteInput!): UpdateNotePayload
+}
+
+# An object with an ID
+interface Node {
+  # The id of the object.
+  id: ID!
+}
+
+type Note implements Node {
+  # The ID of an object
+  id: ID!
+  text: String!
+  timeStamp: String!
+}
+
+# A connection to a list of items.
+type NoteConnection {
+  # Information to aid in pagination.
+  pageInfo: PageInfo!
+
+  # A list of edges.
+  edges: [NoteEdge]
+}
+
+# An edge in a connection.
+type NoteEdge {
+  # The item at the end of the edge
+  node: Note
+
+  # A cursor for use in pagination
+  cursor: String!
+}
+
+# Information about pagination in a connection.
+type PageInfo {
+  # When paginating forwards, are there more items?
+  hasNextPage: Boolean!
+
+  # When paginating backwards, are there more items?
+  hasPreviousPage: Boolean!
+
+  # When paginating backwards, the cursor to continue.
+  startCursor: String
+
+  # When paginating forwards, the cursor to continue.
+  endCursor: String
+}
+
+type Query {
+  viewer: User
+
+  # Fetches an object given its ID
+  node(
+    # The ID of an object
+    id: ID!
+  ): Node
+}
+
+input UpdateNoteInput {
+  id: ID!
+  text: String!
+  timeStamp: String!
+  clientMutationId: String
+}
+
+type UpdateNotePayload {
+  note: Note
+  viewer: User
+  clientMutationId: String
+}
+
+type User implements Node {
+  # The ID of an object
+  id: ID!
+  name: String
+  allNotes(after: String, first: Int, before: String, last: Int): NoteConnection
+  totalCount: Int
+}

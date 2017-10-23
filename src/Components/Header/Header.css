@@ -1,0 +1,17 @@
+.Header {
+    display: flex;
+    border-bottom: 1px solid #aaa;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Header__Title {
+    font-size: 20px;
+    margin: 0;
+
+}
+.Header__SubTitle {
+    font-size: 14px;
+    margin-top: 5px;
+}
